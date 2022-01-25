@@ -11,7 +11,7 @@ namespace _72HourProject.Models
     {
         [Required]
         [MinLength(3, ErrorMessage = "Need more text.")]
-        [MaxLength(8000, ErrorMessage ="Need less text.")]
+        [MaxLength(8000, ErrorMessage = "Need less text.")]
         public string Text { get; set; }
 
         [Required]
