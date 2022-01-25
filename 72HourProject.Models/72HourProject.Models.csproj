@@ -54,6 +54,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CommentCreate.cs" />
     <Compile Include="PostComment.cs" />
     <Compile Include="PostPost.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
