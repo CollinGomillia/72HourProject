@@ -1,4 +1,5 @@
-﻿using _72HourProject.Models;
+﻿using _72HourProject.Data;
+using _72HourProject.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,7 +20,7 @@ namespace _72HourProject.Services
         public bool CreateComment(CommentCreate model)
         {
             var entity =
-                new CommentCreate()
+                new Comment()
                 {
                     Text = model.Text,
                     AuthorId = _userId
@@ -27,8 +28,11 @@ namespace _72HourProject.Services
 
             using (var ctx = new ApplicationDbContext())
             {
-                // need to connect db
+                ctx.Comments.Add(entity);
+                return ctx.SaveChanges() == 1;
             }
         }
+
+        // get comments method
     }
 }
