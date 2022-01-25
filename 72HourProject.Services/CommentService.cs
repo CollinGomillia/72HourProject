@@ -33,6 +33,13 @@ namespace _72HourProject.Services
             }
         }
 
-        // get comments method
+        public IEnumerable<CommentList> GetComments()
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var query = ctx.Comments.Where(e => e.AuthorId == _userId).Select(e => new CommentList { CommentId = e.CommentId, Text = e.Text });
+                return query.ToArray();
+            }
+        }
     }
 }
