@@ -1,17 +1,19 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace _72HourProject.Models
+namespace _72Hour.Reply
 {
-    public class CommentCreate
+    public class Reply
     {
+        [ForeignKey("Comment")]
+        public int Id { get; set; } 
+
         [Required]
-        [MinLength(3, ErrorMessage = "Need more text.")]
-        [MaxLength(8000, ErrorMessage = "Need less text.")]
         public string Text { get; set; }
 
         [Required]
